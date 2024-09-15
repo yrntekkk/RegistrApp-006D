@@ -23,6 +23,13 @@ export class HomePage {
       this.loginError = '';
 
       this.router.navigate(['/inicio'], { state: { username: this.username } }); 
+    } else if (this.username === 'docente' && this.password === 'docente123') {
+      // Muestra un mensaje de éxito
+      this.loginCorrecto = 'Inicio de sesión exitoso!';
+      this.loginError = '';
+
+      this.router.navigate(['/inicio'], { state: { username: this.username } }); 
+
     } else {
       this.loginError = 'Credenciales incorrectas. Inténtalo de nuevo.';
       this.loginCorrecto = '';
