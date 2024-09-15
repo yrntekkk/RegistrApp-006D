@@ -26,6 +26,9 @@
           <ion-button color="tertiary" expand="block" shape="round" (click)="login()">
             Iniciar Sesión
           </ion-button>
+          <ion-text class="ion-text-center">
+            <a (click)="ReestablecerContrasena($event)">Olvidaste tu contraseña?</a>
+          </ion-text>
 
           <ion-text color="danger" *ngIf="loginError" class="ion-text-center">
             {{ loginError }}

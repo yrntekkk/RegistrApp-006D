@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Restablecer Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="reestablecer-background">
+    <div class="reestablecer-container">
+      <ion-card class="reestablecer-card">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Recupera tu Contraseña</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item lines="none">
+            <ion-label position="floating">Nombre de Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username" required></ion-input>
+          </ion-item>
+
+          <ion-button color="tertiary" expand="block" shape="round" (click)="resetPassword()">
+            Recuperar Contraseña
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title class="ion-text-center">
+        <ion-text color="medium">© 2024 Tu Aplicación</ion-text>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

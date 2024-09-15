@@ -59,3 +59,14 @@ ion-text {
   display: block;
   margin-top: 10px;
 }
+
+ion-text a {
+  color: #8f94fb;  // Color morado para el enlace
+  text-decoration: underline;  // Subraya el texto
+  cursor: pointer;  // Cambia el cursor a mano (puntero)
+}
+
+ion-text a:hover {
+  color: #6d6e91;  // Color morado más oscuro al pasar el ratón
+}
+

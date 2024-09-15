@@ -1,0 +1,44 @@
+.reestablecer-background {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);  /* Degradado atractivo de fondo */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .reestablecer-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .reestablecer-card {
+    background: rgba(255, 255, 255, 0.9);  /* Fondo blanco semitransparente */
+    border-radius: 20px;                   /* Bordes redondeados */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+  }
+  
+  ion-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  
+  ion-text {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  ion-footer {
+    background: rgba(255, 255, 255, 0.8);  /* Fondo blanco semitransparente para el footer */
+    border-top: 1px solid #ddd;            /* Línea superior sutil */
+  }
+  
+  ion-footer .ion-title {
+    font-size: 0.9em;
+    color: #6c757d;  /* Color de texto del footer */
+  }
+  

@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="inicio-background">
+    <div class="inicio-container">
+      <ion-card class="inicio-card">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Bienvenido</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-text class="ion-text-center">
+            <h2>¡Hola {{ username }}!</h2>
+            <p>Bienvenido a tu panel.</p>
+          </ion-text>
+
+          <!-- Botón para escanear QR -->
+          <ion-button color="tertiary" expand="block" shape="round" class="boton-qr">
+            <ion-icon slot="start" name="camera-outline"></ion-icon>
+            Escanear QR
+          </ion-button>
+
+          <ion-button color="tertiary" expand="block" shape="round" (click)="logout()">
+            Cerrar Sesión
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-footer>

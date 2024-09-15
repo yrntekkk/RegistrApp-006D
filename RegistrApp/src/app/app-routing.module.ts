@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./page/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'reestablecer',
+    loadChildren: () => import('./page/reestablecer/reestablecer.module').then( m => m.ReestablecerPageModule)
+  },
 ];
 
 @NgModule({
