@@ -28,7 +28,7 @@ export class HomePage {
       this.loginCorrecto = 'Inicio de sesión exitoso!';
       this.loginError = '';
 
-      this.router.navigate(['/inicio'], { state: { username: this.username } }); 
+      this.router.navigate(['/inicio-docente'], { state: { username: this.username } }); 
 
     } else {
       this.loginError = 'Credenciales incorrectas. Inténtalo de nuevo.';

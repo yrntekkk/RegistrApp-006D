@@ -1,13 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>inicioDocente</ion-title>
+    <ion-title class="ion-text-center">Página del Profesor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicioDocente</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="inicio-background">
+    <div class="inicio-container">
+      <ion-card class="inicio-card">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Bienvenido {{ username }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <!-- Botón para generar QR -->
+          <ion-button color="tertiary" expand="block" shape="round" (click)="generateQRCode()">
+            Generar QR
+            <ion-icon slot="start" name="qr-code"></ion-icon>
+          </ion-button>
+
+          <!-- Botón para cerrar sesión -->
+          <ion-button color="tertiary" expand="block" shape="round" (click)="logout()">
+            Cerrar Sesión
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
