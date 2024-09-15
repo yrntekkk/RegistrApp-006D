@@ -12,7 +12,6 @@ export class ReestablecerPage {
   constructor(private router: Router) {}
 
   resetPassword() {
-    // Aquí iría la lógica para restablecer la contraseña (no implementada por ahora)
     this.router.navigate(['/home']);
   }
 }
