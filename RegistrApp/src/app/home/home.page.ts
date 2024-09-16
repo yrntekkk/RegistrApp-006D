@@ -16,20 +16,14 @@ export class HomePage {
   constructor(private router: Router) {}
 
   login() {
-    // Validación de las credenciales
     if (this.username === 'alumno' && this.password === 'alumno123') {
-      // Muestra un mensaje de éxito
       this.loginCorrecto = 'Inicio de sesión exitoso!';
       this.loginError = '';
-
       this.router.navigate(['/inicio'], { state: { username: this.username } }); 
     } else if (this.username === 'docente' && this.password === 'docente123') {
-      // Muestra un mensaje de éxito
       this.loginCorrecto = 'Inicio de sesión exitoso!';
       this.loginError = '';
-
       this.router.navigate(['/inicio-docente'], { state: { username: this.username } }); 
-
     } else {
       this.loginError = 'Credenciales incorrectas. Inténtalo de nuevo.';
       this.loginCorrecto = '';

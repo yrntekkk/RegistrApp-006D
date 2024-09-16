@@ -12,7 +12,6 @@ export class InicioPage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Obtener el estado adicional de la navegación
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras.state) {
       this.username = navigation.extras.state['username'] || 'Usuario';

@@ -9,17 +9,37 @@
     <div class="inicio-container">
       <ion-card class="inicio-card">
         <ion-card-header>
-          <ion-card-title class="ion-text-center">Bienvenido {{ username }}</ion-card-title>
+          <ion-card-title class="ion-text-center">Bienvenido</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          <!-- Botón para generar QR -->
-          <ion-button color="tertiary" expand="block" shape="round" (click)="generateQRCode()">
+          <ion-text class="ion-text-center">
+            <h2>¡Hola {{ username }}!</h2>
+            <p>Bienvenido a tu panel.</p>
+          </ion-text>
+          <ion-button color="tertiary" expand="block" shape="round" id="open-modal">
             Generar QR
             <ion-icon slot="start" name="qr-code"></ion-icon>
           </ion-button>
 
-          <!-- Botón para cerrar sesión -->
+          <ion-modal #modal trigger="open-modal">
+            <ng-template>
+              <ion-content class="no-scroll">
+                <ion-toolbar>
+                  <ion-title>Asistencia</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button color="light" (click)="modal.dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <div class="modal-image-container">
+                  <img alt="Qr" src="assets/img/qr.jpg" class="qr-image" />
+                </div>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+          
+
+       
           <ion-button color="tertiary" expand="block" shape="round" (click)="logout()">
             Cerrar Sesión
           </ion-button>
@@ -28,3 +48,8 @@
     </div>
   </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-footer>
