@@ -18,9 +18,9 @@
             <p>Bienvenido a tu panel.</p>
           </ion-text>
 
-          <ion-button color="tertiary" expand="block" shape="round" class="boton-qr">
-            <ion-icon slot="start" name="camera-outline"></ion-icon>
-            Escanear QR
+          <ion-button color="tertiary" expand="block" shape="round" class="boton-qr" (click)="asignaturas()">
+            <ion-icon slot="start" name="library-outline"></ion-icon>
+            Registrar Asistencia
           </ion-button>
 
           <ion-button color="tertiary" expand="block" shape="round" (click)="logout()">

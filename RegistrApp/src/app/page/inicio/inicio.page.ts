@@ -23,4 +23,7 @@ export class InicioPage implements OnInit {
   logout() {
     this.router.navigate(['/home']);
   }
+  asignaturas() {
+    this.router.navigate(['/asignaturas']);
+  }
 }

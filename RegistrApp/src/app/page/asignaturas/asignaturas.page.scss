@@ -1,0 +1,38 @@
+.asignaturas-background{
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);  
+}
+
+
+.asignaturas-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 16px;
+  }
+  
+  .asignaturas-lista {
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra las tarjetas */
+    gap: 16px; /* Añade espacio entre las tarjetas */
+    width: 100%; /* Ajusta el ancho de la lista */
+  }
+  
+  .asignaturas-card {
+    width: 90%; /* Controla el tamaño máximo de las tarjetas */
+    max-width: 500px; /* Limita el ancho máximo para evitar que sean muy grandes */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .asignatura-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .boton-qr {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  

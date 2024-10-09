@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Asignaturas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="asignaturas-content">
+  <div class="asignaturas-background">
+    <div class="asignaturas-container">
+      <ion-list class="asignaturas-lista">
+
+        <ion-card class="asignaturas-card" *ngFor="let asignatura of asignaturas">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center asignatura-title">
+              {{ asignatura.title }}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button color="tertiary" expand="block" shape="round" class="boton-qr">
+              <ion-icon slot="start" name="camera-outline"></ion-icon>
+              Escanear QR
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-footer>
