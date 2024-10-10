@@ -26,4 +26,7 @@ export class InicioPage implements OnInit {
   asignaturas() {
     this.router.navigate(['/asignaturas']);
   }
+  calendario() {
+    this.router.navigate(['/calendario']);
+  }
 }
