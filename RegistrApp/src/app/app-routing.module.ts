@@ -30,10 +30,12 @@ const routes: Routes = [
   {
     path: 'calendario',
     loadChildren: () => import('./page/calendario/calendario.module').then( m => m.CalendarioPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./page/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  
 
 ];
 

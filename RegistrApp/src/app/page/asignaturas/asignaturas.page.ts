@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-asignaturas',
@@ -13,4 +14,10 @@ export class AsignaturasPage {
     { title: 'Programacion Base de Datos' },
     { title: 'Desarrollo de Software' }
   ];
+  constructor(private router: Router) {}
+
+  // Este es el método que se llama en el HTML
+  goToPage(page: string) {
+    this.router.navigate([`/${page}`]);
+  }
 }
