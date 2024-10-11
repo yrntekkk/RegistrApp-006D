@@ -32,11 +32,13 @@ export class PerfilPage implements OnInit {
     }
   }
 
-
-
-
   logout() {
     this.storage.remove('loggedInUser');
     this.router.navigate(['/home']); // Redirigir al login
+  }
+
+  // Método para la navegación entre páginas
+  goToPage(page: string) {
+    this.router.navigate([`/${page}`]);
   }
 }
