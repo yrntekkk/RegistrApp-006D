@@ -14,13 +14,18 @@
 
         <ion-card-content>
           <ion-text class="ion-text-center">
-            <h2>¡Hola {{ username }}!</h2>
+            <h2>¡Hola {{ nombreCompleto }}!</h2>  <!-- Mostrar nombre completo -->
             <p>Bienvenido a tu panel.</p>
           </ion-text>
 
           <ion-button color="tertiary" expand="block" shape="round" class="boton-qr" (click)="asignaturas()">
             <ion-icon slot="start" name="library-outline"></ion-icon>
             Registrar Asistencia
+          </ion-button>
+
+          <ion-button color="tertiary" expand="block" shape="round" class="boton-qr" (click)="perfil()">
+            <ion-icon slot="start" name="person-outline"></ion-icon>
+            Perfil
           </ion-button>
 
           <ion-button color="tertiary" expand="block" shape="round" class="boton-qr" (click)="calendario()">

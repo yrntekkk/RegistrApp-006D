@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-inicio',
@@ -7,26 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  username: string = '';
+  nombreCompleto: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private storage: Storage) {}
 
-  ngOnInit() {
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      this.username = navigation.extras.state['username'] || 'Usuario';
+  async ngOnInit() {
+    const loggedInUser = await this.storage.get('loggedInUser');
+    if (loggedInUser) {
+      this.nombreCompleto = loggedInUser.nombre;  // Mostrar nombre completo
     } else {
-      this.username = 'Usuario';
+      this.nombreCompleto = 'Usuario';
     }
   }
 
   logout() {
-    this.router.navigate(['/home']);
+    this.storage.remove('loggedInUser');
+    this.router.navigate(['/home']); // Redirigir a la página de login
   }
+
   asignaturas() {
     this.router.navigate(['/asignaturas']);
   }
+
   calendario() {
     this.router.navigate(['/calendario']);
+  }
+
+  perfil() {
+    this.router.navigate(['/perfil']);
   }
 }
