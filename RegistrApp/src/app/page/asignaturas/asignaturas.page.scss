@@ -5,7 +5,7 @@
 
 .asignaturas-container {
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
+    justify-content: center; 
     padding: 16px;
   }
   
@@ -13,16 +13,16 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra las tarjetas */
-    gap: 16px; /* Añade espacio entre las tarjetas */
-    width: 100%; /* Ajusta el ancho de la lista */
+    align-items: center; 
+    gap: 16px; 
+    width: 100%; 
   }
   
   .asignaturas-card {
-    width: 90%; /* Controla el tamaño máximo de las tarjetas */
-    max-width: 500px; /* Limita el ancho máximo para evitar que sean muy grandes */
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 90%; 
+    max-width: 500px; 
+    border-radius: 12px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
   }
   
   .asignatura-title {
@@ -36,3 +36,38 @@
     padding: 12px;
   }
   
+  .back-button {
+    background-color: #6a5acd; 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: absolute;
+    --padding: 0; 
+    margin-bottom: 10px; 
+}
+
+.back-button ion-icon {
+    color: white;
+    font-size: 20px; 
+    margin: 0; 
+}
+
+ion-button {
+  --background: #6a5acd; 
+  --color: white;
+  --border-radius: 15px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --padding: 20px 20px;
+  --font-size: 16px;
+  --icon-padding: 0 8px 0 0;
+  display: flex;
+  align-items: center;
+
+  ion-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+}

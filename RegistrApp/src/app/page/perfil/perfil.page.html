@@ -1,8 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start"> <!-- Usar slot para posicionar correctamente -->
+      <ion-button class="back-button" (click)="goToPage('inicio')">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title class="ion-text-center">Perfil</ion-title>
   </ion-toolbar>
-  <ion-button (click)="goToPage('inicio')">Anterior</ion-button>
 </ion-header>
 
 <ion-content [fullscreen]="true">
