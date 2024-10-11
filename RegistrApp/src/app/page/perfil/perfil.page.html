@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="Perfil-background">
+    <div class="Perfil-container">
+      <ion-card class="Perfil-card">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">{{ nombreCompleto }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="ion-text-center">
+            <img *ngIf="fotoPerfil" [src]="fotoPerfil" alt="Foto de perfil" style="width: 150px; height: 150px; border-radius: 50%;">
+          </div>
+          <ion-text>
+            <h2>Email:</h2>
+            <p>{{ email }}</p>
+          </ion-text>
+
+          <ion-text>
+            <h2>Teléfono:</h2>
+            <p>{{ telefono }}</p>
+          </ion-text>
+
+          <ion-text>
+            <h2>Carrera:</h2>
+            <p>{{ carrera }}</p>
+          </ion-text>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-footer>
