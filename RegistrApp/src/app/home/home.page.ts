@@ -69,7 +69,6 @@ export class HomePage implements OnInit {
 
   
   ReestablecerContrasena(event: any) {
-    console.log('Recuperar contraseña para: ', this.email);
-    alert('Funcionalidad para reestablecer contraseña no implementada aún.');
+    this.router.navigate(['/reestablecer'])
   }
 }

@@ -12,7 +12,14 @@ export class ReestablecerPage {
   constructor(private router: Router) {}
 
   resetPassword() {
-    this.router.navigate(['/home']);
+    console.log('Recuperar contraseña para: ', this.username);
+
+    if (!this.username) {
+      alert('Por favor, ingresa tu nombre de usuario.');
+      return;
+    }
+
+    this.router.navigate(['/home']); 
   }
 }
 
