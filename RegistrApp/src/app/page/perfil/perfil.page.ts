@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 export class PerfilPage implements OnInit {
   nombreCompleto: string = '';
   email: string = '';
-  telefono: string = '';
-  carrera: string = '';
+  phone: string = '';
+  career: string = '';
   fotoPerfil: string = ''; // Puedes asignar la foto aquí si la tienes
 
   constructor(private storage: Storage, private router: Router) {}
@@ -24,8 +24,8 @@ export class PerfilPage implements OnInit {
     if (loggedInUser) {
       this.email = loggedInUser.email || '';
       this.nombreCompleto = loggedInUser.nombre || 'Usuario';
-      this.telefono = loggedInUser.telefono || '';
-      this.carrera = loggedInUser.carrera || '';
+      this.phone = loggedInUser.phone || '';
+      this.career = loggedInUser.career || '';
       this.fotoPerfil = loggedInUser.foto || 'assets/img/png-clipart-computer-icons-user-profile-avatar-avatar-face-heroes.png'; // Si tienes una foto de perfil
     } else {
       this.router.navigate(['/home']); // Redirige a la página de login si no está logueado
