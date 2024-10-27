@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ApiCalendarioService } from './api-calendario.service';
+import { HolidaysService } from './holidays.service';
 
-describe('ApiCalendarioService', () => {
-  let service: ApiCalendarioService;
+describe('HolidaysService', () => {
+  let service: HolidaysService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ApiCalendarioService);
+    service = TestBed.inject(HolidaysService);
   });
 
   it('should be created', () => {

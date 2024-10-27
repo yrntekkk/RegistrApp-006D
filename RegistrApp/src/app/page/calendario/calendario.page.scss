@@ -1,73 +1,52 @@
 .Calendario-background {
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
 
-  .Calendario-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-  }
+.Calendario-container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
 
-  .Calendario-card {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  }
+.Calendario-lista {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
 
-  ion-card-title {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
+.Calendario-card {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  ion-button {
-    margin-top: 20px;
-  }
+.Calendario-card ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
 
-  ion-text {
-    display: block;
-    margin-top: 10px;
-  }
-
-  ion-footer {
-    background: rgba(255, 255, 255, 0.8);
-    border-top: 1px solid #ddd;
-  }
-
-  ion-footer .ion-title {
-    font-size: 0.9em;
-    color: #6c757d;
-  }
-
-
-  .boton-qr {
-    margin-top: 20px;
-  }
-
-  ion-icon[name="camera-outline"] {
-    font-size: 1.2em;
-  }
-
-  .back-button {
-    background-color: #6a5acd; 
-    border-radius: 50%; 
-    width: 40px; 
-    height: 40px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    position: absolute;
-    --padding: 0; 
-    margin-bottom: 10px; 
+.back-button {
+  background-color: #6a5acd; 
+  border-radius: 50%; 
+  width: 40px; 
+  height: 40px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  --padding: 0; 
+  margin-bottom: 10px; 
 }
 
 .back-button ion-icon {
-    color: white;
-    font-size: 20px; 
-    margin: 0; 
+  color: white;
+  font-size: 20px; 
+  margin: 0; 
 }
 
 ion-button {
@@ -75,19 +54,14 @@ ion-button {
   --color: white;
   --border-radius: 15px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --padding: 10px 20px;
+  --padding: 20px 20px;
   --font-size: 16px;
   --icon-padding: 0 8px 0 0;
   display: flex;
   align-items: center;
+}
 
-  &:hover {
-    --background: #483d8b; 
-    --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  ion-icon {
-    margin-right: 8px;
-    font-size: 20px;
-  }
+ion-button ion-icon {
+  margin-right: 8px;
+  font-size: 20px;
 }
