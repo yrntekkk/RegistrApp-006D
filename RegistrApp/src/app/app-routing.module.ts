@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+
   },
   {
     path: '',
@@ -13,30 +15,33 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./page/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./page/inicio/inicio.module').then(m => m.InicioPageModule),
+    canActivate: [AuthGuard]  
   },
   {
     path: 'reestablecer',
-    loadChildren: () => import('./page/reestablecer/reestablecer.module').then( m => m.ReestablecerPageModule)
+    loadChildren: () => import('./page/reestablecer/reestablecer.module').then(m => m.ReestablecerPageModule)
   },
   {
     path: 'inicio-docente',
-    loadChildren: () => import('./page/inicio-docente/inicio-docente.module').then( m => m.InicioDocentePageModule)
+    loadChildren: () => import('./page/inicio-docente/inicio-docente.module').then(m => m.InicioDocentePageModule),
+    canActivate: [AuthGuard]  
   },
   {
     path: 'asignaturas',
-    loadChildren: () => import('./page/asignaturas/asignaturas.module').then( m => m.AsignaturasPageModule)
+    loadChildren: () => import('./page/asignaturas/asignaturas.module').then(m => m.AsignaturasPageModule),
+    canActivate: [AuthGuard]  
   },
   {
     path: 'calendario',
-    loadChildren: () => import('./page/calendario/calendario.module').then( m => m.CalendarioPageModule)
+    loadChildren: () => import('./page/calendario/calendario.module').then(m => m.CalendarioPageModule),
+    canActivate: [AuthGuard]  
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./page/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./page/perfil/perfil.module').then(m => m.PerfilPageModule),
+    canActivate: [AuthGuard]  
   },
-  
-
 ];
 
 @NgModule({
