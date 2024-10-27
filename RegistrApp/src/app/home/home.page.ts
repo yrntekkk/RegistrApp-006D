@@ -13,27 +13,27 @@ export class HomePage implements OnInit {
   loginError?: string;
   loginCorrecto: string = '';  
 
-  
   private predefinedUsers = [
     {
       email: 'alumno1@example.com',
       password: 'alumno123',
-      nombre: 'Juan',  
+      nombre: 'Juan',
+      phone: '955345347',  
       career: 'Ingeniería Informática'
     },
     {
       email: 'alumno2@example.com',
       password: 'alumno123',
       nombre: 'Laura',  
-      phone: '987654321',
-      career: 'Matemáticas'
+      phone: '977568907',
+      career: 'Ingeniería Informática'
     },
     {
       email: 'alumno3@example.com',
       password: 'alumno123',
       nombre: 'Carlos',  
-      phone: '1122334455',
-      career: 'Ingeniería Civil'
+      phone: '953705074',
+      career: 'Ingeniería Informática'
     }
   ];
 
@@ -44,7 +44,6 @@ export class HomePage implements OnInit {
     await this.loadPredefinedUsers();
   }
 
-  
   async loadPredefinedUsers() {
     const users = await this.storage.get('users');
     if (!users) {
@@ -52,14 +51,14 @@ export class HomePage implements OnInit {
     }
   }
 
-  
   async login() {
     const users = await this.storage.get('users');
     const user = users?.find((u: any) => u.email === this.email && u.password === this.password);
 
     if (user) {
       await this.storage.set('loggedInUser', user); 
-      this.loginCorrecto = 'Bienvenido, ' + user.nombre; 
+      localStorage.setItem('authToken', 'true'); 
+      this.loginCorrecto = 'Bienvenido, ' + user.nombre;
       this.router.navigate(['/inicio']); 
     } else {
       this.loginError = 'Credenciales incorrectas. Inténtalo de nuevo.';
@@ -67,8 +66,7 @@ export class HomePage implements OnInit {
     }
   }
 
-  
   ReestablecerContrasena(event: any) {
-    this.router.navigate(['/reestablecer'])
+    this.router.navigate(['/reestablecer']);
   }
 }
