@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start"> 
       <ion-button class="back-button" (click)="goToPage('inicio')">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
@@ -9,26 +9,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="Calendario-background">
-  <div class="Calendario-container">
-    <ion-list class="Calendario-lista">
-      <ion-card class="Calendario-card" *ngFor="let holiday of holidays">
-        <ion-card-header>
-          <ion-card-title>{{ holiday.title }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-text color="dark">
-            <strong>Fecha:</strong> {{ holiday.date }}
-          </ion-text>
-          <ion-text color="medium">
-            <strong>Tipo:</strong> {{ holiday.type }}
-          </ion-text>
-          <ion-text color="medium" *ngIf="holiday.inalienable">
-            <strong>Inalienable:</strong> {{ holiday.extra }}
-          </ion-text>
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
+<ion-content [fullscreen]="true">
+  <div class="Calendario-background">
+    <div class="Calendario-container">
+      <ion-list class="Calendario-lista">
+        <ion-card class="Calendario-card" *ngFor="let holiday of holidays">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center calendario-title">
+              {{ holiday.title }}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text color="dark">
+              <strong>Fecha:</strong> {{ holiday.date }}
+            </ion-text>
+            <ion-text color="medium">
+              <strong>Tipo:</strong> {{ holiday.type }}
+            </ion-text>
+            <ion-text color="medium"*ngIf="holiday.inalienable">
+              <strong>Inalienable:</strong> {{ holiday.extra }}
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </div>
   </div>
 </ion-content>
 

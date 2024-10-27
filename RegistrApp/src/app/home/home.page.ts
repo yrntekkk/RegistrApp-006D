@@ -11,28 +11,27 @@ export class HomePage implements OnInit {
   email: string = '';
   password: string = '';
   loginError?: string;
-  loginCorrecto: string = '';  // Agregado para mostrar el mensaje cuando el login sea correcto
+  loginCorrecto: string = '';  
 
-  // Definir los usuarios predefinidos
+  
   private predefinedUsers = [
     {
       email: 'alumno1@example.com',
       password: 'alumno123',
-      nombre: 'Juan',  // Sólo nombre, sin apellido
-      phone: '123456789',
+      nombre: 'Juan',  
       career: 'Ingeniería Informática'
     },
     {
       email: 'alumno2@example.com',
       password: 'alumno123',
-      nombre: 'Laura',  // Sólo nombre, sin apellido
+      nombre: 'Laura',  
       phone: '987654321',
       career: 'Matemáticas'
     },
     {
       email: 'alumno3@example.com',
       password: 'alumno123',
-      nombre: 'Carlos',  // Sólo nombre, sin apellido
+      nombre: 'Carlos',  
       phone: '1122334455',
       career: 'Ingeniería Civil'
     }
@@ -45,7 +44,7 @@ export class HomePage implements OnInit {
     await this.loadPredefinedUsers();
   }
 
-  // Cargar los usuarios predefinidos al Storage
+  
   async loadPredefinedUsers() {
     const users = await this.storage.get('users');
     if (!users) {
@@ -53,24 +52,23 @@ export class HomePage implements OnInit {
     }
   }
 
-  // Método para hacer login
+  
   async login() {
     const users = await this.storage.get('users');
     const user = users?.find((u: any) => u.email === this.email && u.password === this.password);
 
     if (user) {
-      await this.storage.set('loggedInUser', user); // Guardar el usuario que ha iniciado sesión
-      this.loginCorrecto = 'Bienvenido, ' + user.nombre; // Establece el mensaje de bienvenida
-      this.router.navigate(['/inicio']); // Redirigir al inicio
+      await this.storage.set('loggedInUser', user); 
+      this.loginCorrecto = 'Bienvenido, ' + user.nombre; 
+      this.router.navigate(['/inicio']); 
     } else {
       this.loginError = 'Credenciales incorrectas. Inténtalo de nuevo.';
-      this.loginCorrecto = '';  // Si las credenciales son incorrectas, no mostrar el mensaje de bienvenida
+      this.loginCorrecto = ''; 
     }
   }
 
-  // Método para reestablecer la contraseña
+  
   ReestablecerContrasena(event: any) {
-    // Aquí puedes hacer algo como redirigir a una página de recuperación de contraseña
     console.log('Recuperar contraseña para: ', this.email);
     alert('Funcionalidad para reestablecer contraseña no implementada aún.');
   }

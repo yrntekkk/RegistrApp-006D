@@ -15,7 +15,7 @@ export class InicioPage implements OnInit {
   async ngOnInit() {
     const loggedInUser = await this.storage.get('loggedInUser');
     if (loggedInUser) {
-      this.nombreCompleto = loggedInUser.nombre;  // Mostrar nombre completo
+      this.nombreCompleto = loggedInUser.nombre;  
     } else {
       this.nombreCompleto = 'Usuario';
     }
@@ -23,7 +23,7 @@ export class InicioPage implements OnInit {
 
   logout() {
     this.storage.remove('loggedInUser');
-    this.router.navigate(['/home']); // Redirigir a la página de login
+    this.router.navigate(['/home']); 
   }
 
   asignaturas() {
