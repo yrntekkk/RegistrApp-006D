@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint, CapacitorBarcodeScannerTypeHintALLOption } from '@capacitor/barcode-scanner';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
   styleUrls: ['./asignaturas.page.scss'],
 })
 export class AsignaturasPage {
+    result: string = ''
   asignaturas = [
     { title: 'Programacion Movil' },
     { title: 'Arquitectura' },
@@ -23,13 +25,11 @@ export class AsignaturasPage {
     this.router.navigate([`/${page}`]);
   }
 
-  async scanBarcode() {
-    try {
-      const result = await BarcodeScanner.scan();
-      console.log('Barcode data:', result);
-    } catch (error) {
-      console.error('Error al escanear el código:', error);
-    }
+  async scan(): Promise<void> {
+    const result = await CapacitorBarcodeScanner.scanBarcode({
+      hint: CapacitorBarcodeScannerTypeHint.ALL
+    });
+    this.result = result.ScanResult;
   }
 
   
