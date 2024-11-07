@@ -67,27 +67,11 @@
     font-size: 1.2em;
   }
   
-  ion-button {
-    --background: #6a5acd; 
-    --color: white;
-    --border-radius: 15px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --padding: 10px 20px;
-    --font-size: 16px;
-    --icon-padding: 0 8px 0 0;
-    display: flex;
-    align-items: center;
-  
-    &:hover {
-      --background: #483d8b; 
-      --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    }
-  
     ion-icon {
       margin-right: 8px;
       font-size: 20px;
     }
-  }
+  
 
   .back-button {
     background-color: #6a5acd; 
@@ -99,8 +83,9 @@
     align-items: center; 
     position: absolute;
     --padding: 0; 
-    margin-bottom: 10px; 
-}
+    margin-bottom: 20px; 
+  }
+
 
 .back-button ion-icon {
     color: white;
