@@ -46,8 +46,9 @@
     align-items: center; 
     position: absolute;
     --padding: 0; 
-    margin-bottom: 10px; 
-}
+    margin-bottom: 3px; 
+  }
+
 
 .back-button ion-icon {
     color: white;
@@ -55,19 +56,7 @@
     margin: 0; 
 }
 
-ion-button {
-  --background: #6a5acd; 
-  --color: white;
-  --border-radius: 15px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --padding: 20px 20px;
-  --font-size: 16px;
-  --icon-padding: 0 8px 0 0;
-  display: flex;
-  align-items: center;
-
   ion-icon {
     margin-right: 8px;
     font-size: 20px;
   }
-}
