@@ -13,10 +13,11 @@
   }
   
   .Perfil-card {
-    color: white;
+    font-size: x-large;
+    color: white; 
     background: linear-gradient(135deg, #4e54c8, #8f94fb);
     border-radius: 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
   }
   
   ion-card-title {
@@ -51,7 +52,6 @@
   }
   
   ion-footer {
-    background: rgba(255, 255, 255, 0.8);
     border-top: 1px solid #ddd;
   }
   
@@ -75,7 +75,7 @@
   
 
   .back-button {
-    background-color: #6a5acd; 
+    background-color: white; 
     border-radius: 50%; 
     width: 40px; 
     height: 40px; 
@@ -89,9 +89,8 @@
 
 
 .back-button ion-icon {
-    color: white;
+    color: #6a5acd;
     font-size: 20px; 
     margin: 0; 
 }
-
 
