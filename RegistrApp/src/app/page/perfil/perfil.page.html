@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start"> <!-- Usar slot para posicionar correctamente -->
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start"> 
       <ion-button class="back-button" (click)="goToPage('inicio')">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
@@ -43,8 +43,8 @@
   </div>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar color="light">
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
     <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
   </ion-toolbar>
 </ion-footer>
