@@ -14,13 +14,15 @@
     <div class="Perfil-container">
       <ion-card class="Perfil-card">
         <ion-card-header>
-          <ion-card-title class="ion-text-center">{{ nombreCompleto }}</ion-card-title>
+          <ion-card-title class="ion-text-center"><img src="assets/img/logo-duoc.png" alt=""></ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          <div class="ion-text-center">
-            <img *ngIf="fotoPerfil" [src]="fotoPerfil" alt="Foto de perfil" style="width: 150px; height: 150px; border-radius: 50%;">
-          </div>
+          <ion-text>
+            <h2>Nombre:</h2>
+            <p>{{ nombreCompleto }}</p>
+          </ion-text>
+
           <ion-text>
             <h2>Email:</h2>
             <p>{{ email }}</p>
