@@ -64,4 +64,10 @@ export class InicioPage implements OnInit {
   perfil() {
     this.router.navigate(['/perfil']);
   }
+
+  soporte() {
+   this.router.navigate(['/soporte']);
+   }
+
+
 }
