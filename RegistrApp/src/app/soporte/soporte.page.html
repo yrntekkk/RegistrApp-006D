@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button class="back-button" (click)="goToPage('inicio')">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Soporte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="soporte-background">
+    <div class="soporte-container">
+      <ion-card class="soporte-card">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">
+              <ion-card-title class="ion-text-center"><img src="assets/img/logo-duoc.png" alt=""></ion-card-title>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-text>
+            <h2>Correo: TecnicoSoporte1&#64;example.com</h2>
+          </ion-text>
+
+          <ion-text>
+            <h2>Telefono: 933217057</h2>
+          </ion-text>
+
+          <ion-text>
+            <h2>Nombre Tecnico: Matias Riquelme</h2>
+          </ion-text>
+          <br>
+          <ion-text>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde maiores ipsam officiis mollitia officia, doloremque necessitatibus modi consequuntur, id quas fuga. Et voluptatum harum eos consequuntur modi distinctio culpa voluptatibus!</p>
+          </ion-text>
+          <br>
+          <ion-text>
+            <h2>Horarios de atencion: Lunes a viernes de 9:00 AM a 18:00 PM</h2>
+            <h3>Sabado, Domingos y Feriados no hay horario de atencion</h3>
+          </ion-text>
+
+        </ion-card-content> <!-- Cierre correcto de ion-card-content -->
+        
+      </ion-card> <!-- Cierre correcto de ion-card -->
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-footer>
