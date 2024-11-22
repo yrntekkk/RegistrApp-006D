@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="back-button" routerLink="/asignaturas">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="Asistencia-background">
+  <div class="Asistencia-container">
+    <ion-list class="asistencias-lista">
+      <ion-item *ngFor="let asistencia of getAsistencias()" class="Asistencia-card">
+        <ion-icon slot="start" name="checkmark-circle" color="success"></ion-icon>
+        <ion-label>
+          <h2>{{ asistencia.alumno }}</h2>
+          <p><strong>Asignatura:</strong> {{ asistencia.asignatura }}</p>
+          <p><strong>Fecha y Hora:</strong> {{ asistencia.fechaHora }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-footer>
