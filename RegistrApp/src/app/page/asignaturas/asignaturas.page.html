@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start"> <!-- Usar slot para posicionar correctamente -->
+    <ion-buttons slot="start">
+      <!-- Botón de regreso -->
       <ion-button class="back-button" (click)="goToPage('inicio')">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
@@ -12,12 +13,8 @@
 <ion-content [fullscreen]="true" class="asignaturas-content">
   <div class="asignaturas-background">
     <div class="asignaturas-container">
+      <!-- Lista de asignaturas -->
       <ion-list class="asignaturas-lista">
-
-        <ion-item *ngIf="result">
-          {{result}}
-        </ion-item>
-
         <ion-card class="asignaturas-card" *ngFor="let asignatura of asignaturas">
           <ion-card-header>
             <ion-card-title class="ion-text-center asignatura-title">
@@ -25,13 +22,37 @@
             </ion-card-title>
           </ion-card-header>
           <ion-card-content>
+            <p class="ion-text-center">
+              <strong>Código:</strong> {{ asignatura.codigo }}<br>
+              <strong>Sección:</strong> {{ asignatura.seccion }}<br>
+              <strong>Sala:</strong> {{ asignatura.sala }}<br>
+              <strong>Fecha:</strong> {{ asignatura.fecha }}
+            </p>
+            <!-- Botón de escaneo -->
             <ion-button (click)="scan()" color="tertiary" expand="block" shape="round" class="boton-qr">
               <ion-icon slot="start" name="camera-outline"></ion-icon>
               Escanear QR
             </ion-button>
           </ion-card-content>
         </ion-card>
+      </ion-list>
 
+      <!-- Último QR escaneado -->
+      <ion-item *ngIf="result" lines="none" class="qr-result">
+        <ion-label>
+          <h2 class="ion-text-center">Último QR escaneado:</h2>
+          <p class="ion-text-center">{{ result }}</p>
+        </ion-label>
+      </ion-item>
+
+      <!-- Lista de asistencias registradas -->
+      <ion-list class="asistencias-lista">
+        <ion-item *ngFor="let asistencia of getAsistencias()" lines="none" class="asistencia-item">
+          <ion-label>
+            <h3>{{ asistencia.asignatura }}</h3>
+            <p>Fecha y Hora: {{ asistencia.fechaHora }}</p>
+          </ion-label>
+        </ion-item>
       </ion-list>
     </div>
   </div>
