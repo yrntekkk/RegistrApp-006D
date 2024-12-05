@@ -26,7 +26,6 @@
               <strong>Código:</strong> {{ asignatura.codigo }}<br>
               <strong>Sección:</strong> {{ asignatura.seccion }}<br>
               <strong>Sala:</strong> {{ asignatura.sala }}<br>
-              <strong>Fecha:</strong> {{ asignatura.fecha }}
             </p>
             <!-- Botón de escaneo -->
             <ion-button (click)="scan()" color="tertiary" expand="block" shape="round" class="boton-qr">
@@ -36,14 +35,6 @@
           </ion-card-content>
         </ion-card>
       </ion-list>
-
-      <!-- Último QR escaneado -->
-      <ion-item *ngIf="result" lines="none" class="qr-result">
-        <ion-label>
-          <h2 class="ion-text-center">Último QR escaneado:</h2>
-          <p class="ion-text-center">{{ result }}</p>
-        </ion-label>
-      </ion-item>
 
       <!-- Lista de asistencias registradas -->
       <ion-list class="asistencias-lista">
