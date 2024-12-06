@@ -1,3 +1,18 @@
+ion-toolbar {
+  position: relative; /* Permite posicionamiento preciso de elementos */
+}
+
+ion-title {
+  position: absolute; /* Posiciona el título independientemente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta el punto de referencia */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.back-button {
+  position: relative; /* Permite que la flecha se quede en su lugar */
+  z-index: 1; /* Asegura que esté encima del título */
+}
 .back-button {
   background-color: white;
   border-radius: 50%;
