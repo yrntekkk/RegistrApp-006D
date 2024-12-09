@@ -11,18 +11,38 @@
 
 <ion-content [fullscreen]="true" class="Asistencia-background">
   <div class="Asistencia-container">
-    <ion-list class="asistencias-lista">
-      <ion-item *ngFor="let asistencia of getAsistencias()" class="Asistencia-card">
-        <ion-icon slot="start" name="checkmark-circle" color="success"></ion-icon>
-        <ion-label>
-          <h2>{{ asistencia.alumno }}</h2>
-          <p><strong>Asignatura:</strong> {{ asistencia.asignatura }}</p>
-          <p><strong>Fecha y Hora:</strong> {{ asistencia.fechaHora }}</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
+    <ion-card class="Asistencia-card">
+      <ion-card-content>
+
+        <ion-grid class="Asistencia-table">
+          
+          <!-- Cabecera de la tabla -->
+          <ion-row class="table-header">
+            <ion-col size="3">Curso</ion-col>
+            <ion-col size="3">Clases Registradas</ion-col>
+            <ion-col size="3">Asistencia</ion-col>
+            <ion-col size="3">Porcentaje</ion-col>
+          </ion-row>
+
+          <!-- Datos dinámicos -->
+          <ion-row class="table-row" *ngFor="let item of cursosAsistencias">
+            <ion-col size="3">{{ item.curso }}</ion-col>
+            <ion-col size="3">{{ item.clasesRegistradas }}</ion-col>
+            <ion-col size="3">{{ item.asistencia }}</ion-col>
+            <ion-col size="3">{{ item.porcentaje | percent:'1.1-2' }}</ion-col>
+          </ion-row>
+          
+        </ion-grid>
+        <br>
+        <h2 class="ion-text-center" >Recordatorio</h2>
+        <br>
+        <p class="ion-text-center" >"recuerda que necesitas al menos un 70% de asistencia en clases para aprobar tus materias"</p>
+        <br>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar color="tertiary">

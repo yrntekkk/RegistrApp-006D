@@ -1,57 +1,119 @@
-.Asistencia-background {
-    background: rgba(255, 255, 255, 0.9);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Asistencia-container {
+  display: flex; /* Activa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: calc(100vh - 112px); /* Resta la altura del header (56px) y el footer (56px) */
+  padding: 16px; /* Añade un poco de espacio para que no quede pegada */
+  box-sizing: border-box; /* Asegura que el padding no desajuste el tamaño */
+}
+ion-header ion-toolbar {
+  display: flex; /* Habilita el modelo flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 56px; /* Asegura un alto estándar para el toolbar */
+  position: relative; /* Permite ajustes para elementos hijos */
+}
+.back-button {
+  position: absolute; /* Mantiene el botón en su lugar */
+  z-index: 1; /* Asegura que no se superponga con el título */
+}
+ion-title {
+  margin: 0; /* Elimina márgenes adicionales */
+  font-size: 18px; /* Ajusta el tamaño si es necesario */
+  text-align: center;
+}
+
+
+.back-button {
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px; /* Ajusta para mejor espaciado */
+  --padding: 0;
+}
+
+
+.back-button ion-icon {
+  color: #6a5acd;
+  font-size: 20px;
+}
+
+$primary-color: #4e54c8;
+$secondary-color: #8f94fb;
+$text-color: #6c757d;
+
+.Asistencia-card {
+  color: white;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
+
+ion-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4e54c8; 
+}
+
+ion-footer .ion-title {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.Asistencia-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+ion-card-title img {
+  max-width: 100px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px; /* Opcional, si deseas bordes redondeados */
+}
+
+ion-footer {
+  border-top: 1px solid #ddd;
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+
+  .ion-title {
+    font-size: 0.8em;
   }
-  
-  .Asistencia-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-  }
-  
-  .asistencias-lista {
-    ion-item {
-      background: linear-gradient(135deg, #4e54c8, #8f94fb);
-      border-radius: 20px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
-      margin-bottom: 15px;
-      color: white;
-      padding: 15px;
-  
-      ion-icon {
-        font-size: 24px;
-        margin-right: 12px;
-      }
-  
-      h2 {
-        font-size: 1.2em;
-        font-weight: bold;
-        margin: 0;
-      }
-  
-      p {
-        margin: 5px 0;
-        font-size: 0.9em;
-      }
+}
+ion-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.Asistencia-table {
+  width: 100%;
+  text-align: left;
+
+  .table-header {
+    background-color: #4e54c8; // Color principal
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+
+    ion-col {
+      text-align: center;
+      padding: 10px 0;
     }
   }
-  
-  .back-button {
-    background-color: white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    --padding: 0;
+
+  .table-row {
+    background-color: rgba(255, 255, 255, 0.9); // Fondo claro
+    border-bottom: 1px solid #ddd;
+
+    ion-col {
+      text-align: center;
+      padding: 10px 0;
+      color: #333; // Color del texto
+    }
+
+    &:nth-child(even) {
+      background-color: #f4f5f8; // Fondo alternativo para filas pares
+    }
   }
-  
-  .back-button ion-icon {
-    color: #6a5acd;
-    font-size: 20px;
-  }
+}
