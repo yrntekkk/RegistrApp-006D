@@ -62,6 +62,8 @@ export class AsignaturasPage implements OnInit {
     }
   }
 
+//-------------------------------------------------------------------------------------------------------------------//
+
   // Registrar asistencia
   registrarAsistencia(qrData: string): void {
     // Validar que el formato del QR sea correcto
@@ -70,29 +72,66 @@ export class AsignaturasPage implements OnInit {
       this.presentAlert('Formato Incorrecto', 'El código QR no cumple con el formato esperado: <ASIGNATURA>|<SECCION>|<SALA>|<FECHA>');
       return;
     }
-
+  
     const [codigo, seccion, sala, fecha] = parts;
-
+  
     // Buscar la asignatura en la lista
     const asignatura = this.asignaturas.find(a => a.codigo === codigo && a.seccion === seccion && a.sala === sala);
-
+  
     if (asignatura) {
+      const fechaActual = new Date();
+      const fechaHoy = fechaActual.toISOString().split('T')[0]; // Obtener solo la fecha en formato YYYY-MM-DD
+  
+      // Verificar si ya se registró la misma sección en el mismo horario
+      const yaRegistrado = this.asistencias.some(asistencia =>
+        asistencia.asignatura === asignatura.title &&
+        asistencia.fechaHora.startsWith(fecha)
+      );
+  
+      if (yaRegistrado) {
+        this.presentAlert(
+          'Registro Duplicado',
+          `La sección ${seccion} ya fue registrada en el horario especificado.`
+        );
+        return;
+      }
+  
+      // Verificar si ya hay 3 registros en el día
+      const registrosHoy = this.asistencias.filter(asistencia =>
+        asistencia.fechaHora.startsWith(fechaHoy)
+      ).length;
+  
+      if (registrosHoy >= 3) {
+        this.presentAlert(
+          'Límite Alcanzado',
+          'Solo se pueden registrar 3 secciones por día.'
+        );
+        return;
+      }
+  
       // Registrar la asistencia con la fecha y hora actual
       const fechaHoraActual = new Date().toLocaleString();
       this.asistencias.push({
         asignatura: asignatura.title,
         fechaHora: fechaHoraActual,
       });
-
+  
       console.log('Asistencia registrada:', {
         asignatura: asignatura.title,
         fechaHora: fechaHoraActual,
       });
+  
+      this.presentAlert(
+        'Registro Exitoso',
+        `Asistencia registrada para ${asignatura.title} en la sección ${seccion}.`
+      );
     } else {
       console.warn('El QR escaneado no coincide con ninguna asignatura.');
       this.presentAlert('Asignatura no encontrada', 'El código QR escaneado no coincide con ninguna asignatura registrada.');
     }
   }
+
+  //-------------------------------------------------------------------------------------------------------------------------//
 
   // Solicitar permisos para la cámara
   async requestPermissions(): Promise<boolean> {

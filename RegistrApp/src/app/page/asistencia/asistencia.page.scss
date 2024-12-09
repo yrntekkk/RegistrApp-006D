@@ -1,18 +1,29 @@
-ion-toolbar {
-  position: relative; /* Permite posicionamiento preciso de elementos */
+.Asistencia-container {
+  display: flex; /* Activa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: calc(100vh - 112px); /* Resta la altura del header (56px) y el footer (56px) */
+  padding: 16px; /* Añade un poco de espacio para que no quede pegada */
+  box-sizing: border-box; /* Asegura que el padding no desajuste el tamaño */
 }
-
-ion-title {
-  position: absolute; /* Posiciona el título independientemente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translateX(-50%); /* Ajusta el punto de referencia */
-  text-align: center; /* Asegura que el texto esté centrado */
+ion-header ion-toolbar {
+  display: flex; /* Habilita el modelo flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 56px; /* Asegura un alto estándar para el toolbar */
+  position: relative; /* Permite ajustes para elementos hijos */
 }
-
 .back-button {
-  position: relative; /* Permite que la flecha se quede en su lugar */
-  z-index: 1; /* Asegura que esté encima del título */
+  position: absolute; /* Mantiene el botón en su lugar */
+  z-index: 1; /* Asegura que no se superponga con el título */
 }
+ion-title {
+  margin: 0; /* Elimina márgenes adicionales */
+  font-size: 18px; /* Ajusta el tamaño si es necesario */
+  text-align: center;
+}
+
+
 .back-button {
   background-color: white;
   border-radius: 50%;
@@ -25,10 +36,12 @@ ion-title {
   --padding: 0;
 }
 
+
 .back-button ion-icon {
   color: #6a5acd;
   font-size: 20px;
 }
+
 $primary-color: #4e54c8;
 $secondary-color: #8f94fb;
 $text-color: #6c757d;
@@ -39,12 +52,16 @@ $text-color: #6c757d;
 }
 
 ion-card-title {
-  color: $primary-color;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4e54c8; 
 }
 
 ion-footer .ion-title {
-  color: $text-color;
+  font-size: 0.9em;
+  color: #6c757d;
 }
+
 .Asistencia-card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
@@ -54,6 +71,7 @@ ion-card-title img {
   display: block;
   border-radius: 8px; /* Opcional, si deseas bordes redondeados */
 }
+
 ion-footer {
   border-top: 1px solid #ddd;
   background-color: $primary-color;
