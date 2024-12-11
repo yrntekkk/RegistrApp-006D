@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="tertiary" >
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-button class="back-button" routerLink="/asignaturas">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -18,34 +18,32 @@
           
           <!-- Cabecera de la tabla -->
           <ion-row class="table-header">
-            <ion-col size="3">Curso</ion-col>
-            <ion-col size="3">Clases Registradas</ion-col>
-            <ion-col size="3">Asistencia</ion-col>
-            <ion-col size="3">Porcentaje</ion-col>
+            <ion-col size="4">Alumno</ion-col>
+            <ion-col size="4">Asignatura</ion-col>
+            <ion-col size="4">Fecha y Hora</ion-col>
           </ion-row>
 
           <!-- Datos dinámicos -->
-          <ion-row class="table-row" *ngFor="let item of cursosAsistencias">
-            <ion-col size="3">{{ item.curso }}</ion-col>
-            <ion-col size="3">{{ item.clasesRegistradas }}</ion-col>
-            <ion-col size="3">{{ item.asistencia }}</ion-col>
-            <ion-col size="3">{{ item.porcentaje | percent:'1.1-2' }}</ion-col>
+          <ion-row class="table-row" *ngFor="let asistencia of asistencias">
+            <ion-col size="4">{{ asistencia.alumno || 'N/A' }}</ion-col>
+            <ion-col size="4">{{ asistencia.asignatura }}</ion-col>
+            <ion-col size="4">{{ asistencia.fechaHora }}</ion-col>
           </ion-row>
           
         </ion-grid>
+
         <br>
-        <h2 class="ion-text-center" >Recordatorio</h2>
+        <h2 class="ion-text-center">Recordatorio</h2>
         <br>
-        <p class="ion-text-center" >"recuerda que necesitas al menos un 70% de asistencia en clases para aprobar tus materias"</p>
+        <p class="ion-text-center">"Recuerda que necesitas al menos un 70% de asistencia en clases para aprobar tus materias."</p>
         <br>
       </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
 
-
 <ion-footer>
   <ion-toolbar color="tertiary">
-    <ion-title class="ion-text-center" size="small">© 2024 RegistrApp</ion-title>
+    <ion-title class="ion-text-center" size="small">&copy; 2024 RegistrApp</ion-title>
   </ion-toolbar>
 </ion-footer>
