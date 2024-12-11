@@ -25,7 +25,6 @@
 
           <!-- Datos dinámicos -->
           <ion-row class="table-row" *ngFor="let asistencia of asistencias">
-            <ion-col size="4">{{ asistencia.alumno || 'N/A' }}</ion-col>
             <ion-col size="4">{{ asistencia.asignatura }}</ion-col>
             <ion-col size="4">{{ asistencia.fechaHora }}</ion-col>
           </ion-row>

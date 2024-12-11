@@ -35,16 +35,6 @@
           </ion-card-content>
         </ion-card>
       </ion-list>
-
-      <!-- Lista de asistencias registradas -->
-      <ion-list class="asistencias-lista">
-        <ion-item *ngFor="let asistencia of getAsistencias()" lines="none" class="asistencia-item">
-          <ion-label>
-            <h3>{{ asistencia.asignatura }}</h3>
-            <p>Fecha y Hora: {{ asistencia.fechaHora }}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
     </div>
   </div>
 </ion-content>
