@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-asistencia',
@@ -6,31 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./asistencia.page.scss'],
 })
 export class AsistenciaPage {
-  // Lista de asistencias por alumno
-  asistencias = [
-    { alumno: 'Juan Pérez', asignatura: 'Programación Móvil', fechaHora: '2024-11-22 10:30 AM' },
-    { alumno: 'Ana López', asignatura: 'Arquitectura', fechaHora: '2024-11-22 11:00 AM' },
-    { alumno: 'Carlos Martínez', asignatura: 'Inglés Elemental', fechaHora: '2024-11-22 11:30 AM' },
-  ];
+  // Lista para mostrar asistencias registradas
+  asistencias: { alumno?: string; asignatura: string; fechaHora: string }[] = [];
 
-  // Lista de cursos con sus asistencias
-  cursosAsistencias = [
-    { curso: 'Programacion Movil', clasesRegistradas: 14, asistencia: 11, porcentaje: 0.786 },
-    { curso: 'Arquitectura', clasesRegistradas: 32, asistencia: 23, porcentaje: 0.719 },
-    { curso: 'Inglés Intermedio', clasesRegistradas: 59, asistencia: 46, porcentaje: 0.78 },
-    { curso: 'Programacion De Bases De Datos', clasesRegistradas: 33, asistencia: 25, porcentaje: 0.758 },
-    { curso: 'Desarrollo de Software', clasesRegistradas: 31, asistencia: 24, porcentaje: 0.774 },
-  ];
+  constructor(private router: Router) {}
 
-  constructor() {}
-
-  // Métodos opcionales para cada lista
-  getAsistencias() {
-    return this.asistencias;
+  // Navegación a otra página
+  goToPage(page: string) {
+    this.router.navigate([`/${page}`]);
   }
 
-  getCursosAsistencias() {
-    return this.cursosAsistencias;
+  // Método para actualizar la tabla de asistencias desde localStorage
+  ionViewWillEnter() {
+    const savedAsistencias = localStorage.getItem('asistencias');
+    this.asistencias = savedAsistencias ? JSON.parse(savedAsistencias) : [];
   }
 }
-
