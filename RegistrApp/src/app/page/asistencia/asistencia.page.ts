@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AsistenciaPage {
   // Lista para mostrar asistencias registradas
-  asistencias: { alumno?: string; asignatura: string; fechaHora: string }[] = [];
+  asistencias: { asignatura: string; fechaHora: string }[] = [];
 
   constructor(private router: Router) {}
 

@@ -28,7 +28,12 @@
               <strong>Sala:</strong> {{ asignatura.sala }}<br>
             </p>
             <!-- Botón de escaneo -->
-            <ion-button (click)="scan()" color="tertiary" expand="block" shape="round" class="boton-qr">
+            <ion-button 
+              (click)="scan(asignatura.codigo)" 
+              color="tertiary" 
+              expand="block" 
+              shape="round" 
+              class="boton-qr">
               <ion-icon slot="start" name="camera-outline"></ion-icon>
               Escanear QR
             </ion-button>
