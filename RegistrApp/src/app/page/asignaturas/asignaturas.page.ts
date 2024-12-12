@@ -26,7 +26,7 @@ export class AsignaturasPage implements OnInit {
   asistencias: { asignatura: string; fechaHora: string }[] = [];
   asignaturaSeleccionada: string = ''; // Variable para almacenar la asignatura seleccionada
 
-  constructor(private alertController: AlertController, private router: Router) {}
+  constructor(private alertController: AlertController, private router: Router) { }
 
   ngOnInit() {
     // Verificar si el escáner es soportado por el dispositivo
@@ -91,6 +91,15 @@ export class AsignaturasPage implements OnInit {
       const fechaActual = new Date();
       const fechaHoy = fechaActual.toISOString().split('T')[0]; // Obtener solo la fecha en formato YYYY-MM-DD
 
+      // Validar que la fecha del QR corresponde al día actual
+      if (fecha !== fechaHoy) {
+        this.presentAlert(
+          'Fecha Inválida',
+          `El código QR escaneado corresponde a una fecha diferente al día de hoy (${fecha}).`
+        );
+        return;
+      }
+
       // Verificar si ya se registró la misma sección en el mismo horario
       const yaRegistrado = this.asistencias.some(asistencia =>
         asistencia.asignatura === asignatura.title &&
@@ -141,6 +150,7 @@ export class AsignaturasPage implements OnInit {
       console.warn('El QR escaneado no coincide con ninguna asignatura.');
       this.presentAlert('Asignatura no encontrada', 'El código QR escaneado no coincide con ninguna asignatura registrada.');
     }
+
   }
 
   //-------------------------------------------------------------------------------------------------------------------------//
